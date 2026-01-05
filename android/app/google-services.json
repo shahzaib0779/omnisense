@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "449382666502",
+    "project_id": "omnisense-aa843",
+    "storage_bucket": "omnisense-aa843.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:449382666502:android:e28af1f9f024c4d097ce87",
+        "android_client_info": {
+          "package_name": "com.example.omnisense"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBfgJIPw5F0l2hjts1_S5Sa-ZsAjmSeUKA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
