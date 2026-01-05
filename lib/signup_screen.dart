@@ -115,13 +115,19 @@ class _SignupScreenState extends State<SignupScreen> {
   // UI Helper for SnackBar
   void _showError(String message) {
     ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text(message), backgroundColor: Colors.redAccent),
+      SnackBar(
+        content: Text(message, style: TextStyle(fontFamily: "Montserrat")),
+        backgroundColor: Colors.redAccent,
+      ),
     );
   }
 
   void _showSuccess(String message) {
     ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text(message), backgroundColor: Colors.green),
+      SnackBar(
+        content: Text(message, style: TextStyle(fontFamily: "Montserrat")),
+        backgroundColor: Colors.green,
+      ),
     );
   }
 

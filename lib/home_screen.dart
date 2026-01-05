@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:omnisense/QRScanner.dart';
 import 'package:omnisense/login_screen.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -19,12 +20,7 @@ class _HomeScreenState extends State<HomeScreen> {
         style: TextStyle(fontFamily: "Montserrat", fontSize: 18),
       ),
     ),
-    const Center(
-      child: Text(
-        "QR Scanner",
-        style: TextStyle(fontFamily: "Montserrat", fontSize: 18),
-      ),
-    ),
+    QRScannerScreen(),
     const Center(
       child: Text(
         "Real-Time Chat",
@@ -77,7 +73,7 @@ class _HomeScreenState extends State<HomeScreen> {
         height: 60.0,
         items: const <Widget>[
           Icon(Icons.auto_awesome, size: 30, color: Colors.white),
-          Icon(Icons.qr_code_scanner, size: 30, color: Colors.white), 
+          Icon(Icons.qr_code_scanner, size: 30, color: Colors.white),
           Icon(
             Icons.chat_bubble_outline,
             size: 30,
