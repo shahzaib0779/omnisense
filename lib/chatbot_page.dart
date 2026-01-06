@@ -17,7 +17,7 @@ class _ChatbotPageState extends State<ChatbotPage> {
 
   // 1. Initialize with System Instructions for CS & Tech Focus
   late final _model = FirebaseAI.googleAI().generativeModel(
-    model: 'gemini-2.5-flash',
+    model: 'gemini-2.5-flash-lite',
     systemInstruction: Content.system(
       "Your name is OmniSense. You are a world-class expert in Computer Science, "
       "Artificial Intelligence, and Technology. Provide insightful, technically "
@@ -60,7 +60,7 @@ class _ChatbotPageState extends State<ChatbotPage> {
       debugPrint("AI ERROR: $e");
       setState(() {
         _messages[_messages.length - 1]["text"] =
-            "Connection issue. Check your CS lab network!";
+            "Connection issue. Check your network!";
         _isTyping = false;
       });
     }
