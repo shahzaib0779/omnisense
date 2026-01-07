@@ -18,7 +18,7 @@ class _HomeScreenState extends State<HomeScreen> {
     const ChatbotPage(),
     const QRScannerScreen(),
     const UserchatPage(),
-    const Admob(),
+    const SettingsPage(),
   ];
 
   @override
@@ -38,7 +38,7 @@ class _HomeScreenState extends State<HomeScreen> {
             size: 30,
             color: Colors.white,
           ), // Chat
-          Icon(Icons.ads_click, size: 30, color: Colors.white), // Ads
+          Icon(Icons.settings_outlined, size: 30, color: Colors.white), // Ads
         ],
         color: const Color(0xFF0A74DA), // Bar color
         buttonBackgroundColor: const Color(0xFF0A74DA), // Floating button color

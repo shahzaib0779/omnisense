@@ -82,21 +82,28 @@ class _SignupScreenState extends State<SignupScreen> {
     setState(() => isLoading = true);
 
     try {
-      // Firebase handles duplicate email checks automatically [cite: 17]
-      await FirebaseAuth.instance.createUserWithEmailAndPassword(
-        email: emailController.text.trim(),
-        password: passwordController.text.trim(),
-      );
+      // 1. Create the user in Firebase
+      UserCredential userCredential = await FirebaseAuth.instance
+          .createUserWithEmailAndPassword(
+            email: emailController.text.trim(),
+            password: passwordController.text.trim(),
+          );
 
-      await FirebaseAuth.instance.currentUser?.updateDisplayName(
-        nameController.text.trim(),
-      );
+      // 2. Update the display name in the Auth profile
+      await userCredential.user?.updateDisplayName(nameController.text.trim());
 
-      _showSuccess("Account created! Please Login.");
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(builder: (context) => const LoginScreen()),
-      );
+      // 3. CRITICAL: Refresh the user's local data so the name is immediately available
+      await userCredential.user?.reload();
+
+      if (mounted) {
+        _showSuccess("Account created! Please log in.");
+
+        // 4. Navigate to your GreetingScreen to show the "Hello" animation
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(builder: (context) => const LoginScreen()),
+        );
+      }
     } on FirebaseAuthException catch (e) {
       setState(() {
         if (e.code == 'email-already-in-use') {

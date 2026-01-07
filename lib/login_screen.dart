@@ -1,6 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:omnisense/greeting_screen.dart';
 import 'package:omnisense/signup_screen.dart';
-import 'package:omnisense/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
 
@@ -49,7 +49,7 @@ class _LoginScreenState extends State<LoginScreen> {
       if (mounted) {
         Navigator.pushReplacement(
           context,
-          MaterialPageRoute(builder: (context) => const HomeScreen()),
+          MaterialPageRoute(builder: (context) => const GreetingScreen()),
         );
       }
     } on FirebaseAuthException catch (e) {

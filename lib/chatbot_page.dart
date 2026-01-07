@@ -205,6 +205,10 @@ class _ChatbotPageState extends State<ChatbotPage> {
                 style: const TextStyle(fontFamily: "Montserrat"),
                 decoration: InputDecoration(
                   hintText: "Ask about AI, Code, or Tech...",
+                  hintStyle: TextStyle(
+                    fontFamily: "Montserrat",
+                    color: Colors.grey,
+                  ),
                   filled: true,
                   fillColor: const Color(0xFFF1F5F9),
                   border: OutlineInputBorder(
