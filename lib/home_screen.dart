@@ -1,9 +1,10 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:omnisense/QRScanner.dart';
 import 'package:omnisense/admob.dart';
 import 'package:omnisense/chatbot_page.dart';
-import 'package:omnisense/userchat_page.dart';
+import 'package:omnisense/chats/chat_page.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -17,7 +18,10 @@ class _HomeScreenState extends State<HomeScreen> {
   final List<Widget> _screens = [
     const ChatbotPage(),
     const QRScannerScreen(),
-    const UserchatPage(),
+    ChatPage(
+      currentUserEmail:
+          FirebaseAuth.instance.currentUser?.email ?? "default@email.com",
+    ),
     const SettingsPage(),
   ];
 
