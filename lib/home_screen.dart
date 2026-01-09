@@ -5,6 +5,7 @@ import 'package:omnisense/QRScanner.dart';
 import 'package:omnisense/admob.dart';
 import 'package:omnisense/chatbot_page.dart';
 import 'package:omnisense/chats/chat_page.dart';
+import 'package:omnisense/yolo.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -22,6 +23,7 @@ class _HomeScreenState extends State<HomeScreen> {
       currentUserEmail:
           FirebaseAuth.instance.currentUser?.email ?? "default@email.com",
     ),
+    const YoloIdentifierScreen(),
     const SettingsPage(),
   ];
 
@@ -37,12 +39,13 @@ class _HomeScreenState extends State<HomeScreen> {
         items: const <Widget>[
           Icon(Icons.auto_awesome, size: 30, color: Colors.white),
           Icon(Icons.qr_code_scanner, size: 30, color: Colors.white),
+          Icon(Icons.chat_bubble_outline, size: 30, color: Colors.white),
+          Icon(Icons.psychology, size: 30, color: Colors.white),
           Icon(
-            Icons.chat_bubble_outline,
+            Icons.settings_outlined,
             size: 30,
             color: Colors.white,
-          ), // Chat
-          Icon(Icons.settings_outlined, size: 30, color: Colors.white), // Ads
+          ), // Settings
         ],
         color: const Color(0xFF0A74DA), // Bar color
         buttonBackgroundColor: const Color(0xFF0A74DA), // Floating button color

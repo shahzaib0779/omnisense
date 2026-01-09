@@ -8,7 +8,7 @@ plugins {
 android {
     namespace = "com.example.omnisense"
     compileSdk = 36
-    ndkVersion = "27.0.12077973"
+    ndkVersion = "28.2.13676358"
 
     compileOptions {
         isCoreLibraryDesugaringEnabled = true        
@@ -33,6 +33,11 @@ android {
         release {
             signingConfig = signingConfigs.getByName("debug")
         }
+    }
+    
+    @Suppress("UnstableApiUsage")
+    androidResources {
+        noCompress += "tflite"
     }
 }
 
