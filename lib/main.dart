@@ -2,6 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:omnisense/auth_wrapper.dart';
 import 'package:omnisense/firebase_options.dart';
 
@@ -17,7 +18,7 @@ void main() async {
 
   // 1. Register background handler
   FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
-
+  await MobileAds.instance.initialize();
   runApp(const MyApp());
 }
 

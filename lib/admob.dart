@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:omnisense/ad_manager.dart';
 import 'login_screen.dart';
 import 'faq_page.dart'; // Create these files next
 import 'complain_page.dart';
@@ -96,6 +97,12 @@ class _SettingsPageState extends State<SettingsPage> {
                     "Help & Support",
                     "Get technical assistance",
                     const HelpSupportPage(),
+                  ),
+                  _buildNavTile(
+                    Icons.ads_click_outlined,
+                    "AdMob Ads",
+                    "Check out sample ads",
+                    const AdDisplayClass(),
                   ),
                   const Divider(height: 40),
                   _buildLogoutTile(),
